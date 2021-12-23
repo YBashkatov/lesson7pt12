@@ -1,14 +1,8 @@
 import sys
-import csv
 
+"""Count hits for each file on web site"""
 
+for line in sys.stdin:
+    data = line.strip().split(' ')
 
-def mapper():
-    for line in sys.stdin:
-        data = line.strip().split(' ')
-        # if len(data) != 9:
-        #     continue
-
-        print("{0}\t{1}".format(data[6], data[0]))
-
-mapper()
+    print("{0}\t{1}".format(data[6], data[0]))
