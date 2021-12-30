@@ -1,24 +1,20 @@
 import sys
 
-oldKey = None
-countHits = 0
+prev_ip = None
+count_hits = 0
 
 for line in sys.stdin:
-    data = line.strip().split('\t')
+    data = line.strip()
 
-    if len(data) != 2:
+    if len(data) != 1:
         continue
-    thisKey, thisSource = data
-    if oldKey and oldKey != thisKey:
-        print('{}\t{}'.format(oldKey, countHits))
+    ip = data
+    if prev_ip and prev_ip != ip:
+        print('{}\t{}'.format(prev_ip, count_hits))
         countHits = 0
 
-    oldKey = thisKey
-    countHits += 1
+    prev_ip = ip
+    count_hits += 1
 
-if oldKey != None:
-    print('{}\t{}'.format(oldKey, countHits))
-
-
-
-
+if prev_ip:
+    print('{}\t{}'.format(prev_ip, count_hits))

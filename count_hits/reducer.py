@@ -8,17 +8,15 @@ for line in sys.stdin:
 
     if len(data) != 1:
         continue
-    this_page = data
-    if prev_page and prev_page != this_page:
+    page = data
+    if page == '/':
+        continue
+    if prev_page and prev_page != page:
         print('{}\t{}'.format(prev_page, count_hits))
-        countHits = 0
+        count_hits = 0
 
-    prev_page = this_page
+    prev_page = page
     count_hits += 1
 
 if prev_page:
     print('{}\t{}'.format(prev_page, count_hits))
-
-
-
-

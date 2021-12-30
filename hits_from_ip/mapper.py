@@ -4,7 +4,6 @@ import sys
 
 for line in sys.stdin:
     data = line.strip().split(' ')
+    ip, identity, username, datetime, tz, method, page, protocol, status, content_size = data
 
-
-    print("{0}\t{1}".format(data[0], data[6]))
-
+    print("{0}".format(ip))
