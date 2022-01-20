@@ -4,11 +4,8 @@ prev_page = None
 count_hits = 0
 
 for line in sys.stdin:
-    data = line.strip()
+    page = line.strip()
 
-    if len(data) != 1:
-        continue
-    page = data
     if page == '/':
         continue
     if prev_page and prev_page != page:

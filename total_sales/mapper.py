@@ -8,4 +8,4 @@ for line in sys.stdin:
 
     if len(data) != 6:
         continue
-    print("{0}".format(value))
+    print(value)

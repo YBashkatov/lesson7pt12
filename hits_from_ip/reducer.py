@@ -4,11 +4,10 @@ prev_ip = None
 count_hits = 0
 
 for line in sys.stdin:
-    data = line.strip()
+    ip = line.strip()
 
-    if len(data) != 1:
+    if len(ip) != 1:
         continue
-    ip = data
     if prev_ip and prev_ip != ip:
         print('{}\t{}'.format(prev_ip, count_hits))
         countHits = 0
