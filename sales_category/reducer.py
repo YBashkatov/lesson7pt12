@@ -12,7 +12,7 @@ for line in sys.stdin:
 
     if prev_sale_type and prev_sale_type != sale_type:
         print('{}\t{}'.format(prev_sale_type, total_sales))
-        totalSales = 0
+        total_sales = 0
 
     prev_sale_type = sale_type
     total_sales += float(value)
